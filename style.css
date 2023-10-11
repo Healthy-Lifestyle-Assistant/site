@@ -1,3 +1,15 @@
 body {
-	background-color: rgb(33, 37, 41, .6);
+	background-color:rgb(13,110,253, .1);
 }
+
+/* For screens < 800px */
+.container-width {
+	width: 85%;
+}
+
+/* For screens >= 800px */
+@media (min-width: 800px) {
+	.container-width {
+	  width: 50%;
+	}
+  }
