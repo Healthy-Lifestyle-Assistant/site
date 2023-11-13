@@ -1,15 +1,17 @@
-body {
-	background-color:rgb(13,110,253, .1);
+.logo-custom-size {
+    width: 26px;
+    height: 26px;
 }
 
 /* For screens < 800px */
-.container-width {
+.container-custom {
+	margin-top: 6rem;
 	width: 85%;
 }
 
 /* For screens >= 800px */
 @media (min-width: 800px) {
-	.container-width {
+	.container-custom {
 	  width: 50%;
 	}
   }
