@@ -1,0 +1,23 @@
+.NavbarLink {
+  position: relative;
+  color: var(--secondary-color);
+  text-decoration: none;
+  padding: 10px 20px;
+  z-index: 1;
+  transition: .3s ease;
+
+  &--active {
+    color: var(--black-color);
+  }
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    background-color: var(--primary-color);
+    z-index: -1;
+  }
+}

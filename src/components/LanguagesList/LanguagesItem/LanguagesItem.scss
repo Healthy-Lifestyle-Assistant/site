@@ -1,0 +1,28 @@
+.LanguagesItem {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1rem;
+  outline: 0;
+  border: 0;
+  background: transparent;
+  color: var(--secondary-color);
+  transition: color .3s ease;
+  z-index: 1;
+  cursor: pointer;
+
+  &--active {
+    color: var(--black-color);
+  }
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    background-color: var(--primary-color);
+    z-index: -1;
+  }
+}

@@ -1,0 +1,47 @@
+@import '@styles/mixins.scss';
+@import '@styles/variables.scss';
+
+:root {
+  --burger-size: 24px;
+  --burger-gap: calc(var(--burger-size) / 6);
+  --burger-line-height: calc(var(--burger-size) / 9);
+}
+
+.MenuToggler {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  min-width: var(--burger-size);
+  min-height: var(--burger-size);
+  background: transparent;
+  outline: 0;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &__line {
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 2.5px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+  }
+
+  &--opened {
+    .MenuToggler__line--1 {
+      transform: translateY(calc(var(--burger-gap) + var(--burger-line-height))) rotate(45deg);
+    }
+    .MenuToggler__line--2 {
+      transform: translateX(calc(-1 * var(--header-icon-size) / 2));
+      width: 0;
+    }
+    .MenuToggler__line--3 {
+      transform: translateY(calc(-1 * (var(--burger-gap) + var(--burger-line-height)))) rotate(-45deg);
+    }
+  }
+}
