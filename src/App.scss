@@ -1,0 +1,10 @@
+@import '@styles/variables.scss';
+@import '@styles/mixins.scss';
+@import '@styles/normalize.scss';
+
+.App {
+  background-color: var(--bg-color);
+  &__container {
+    min-height: 1000px;
+  }
+}

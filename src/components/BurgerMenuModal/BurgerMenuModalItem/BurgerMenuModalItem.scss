@@ -1,0 +1,23 @@
+.BurgerMenuModalItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  background: none;
+  padding: 1rem .5rem;
+  opacity: .8;
+  cursor: pointer;
+
+  &--active {
+    opacity: 1;
+  }
+
+  &__selected {
+    max-width: 14px;
+    max-height: 14px;
+  }
+
+}
