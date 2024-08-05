@@ -1,0 +1,59 @@
+@import '@styles/mixins.scss';
+
+.About {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.65rem;
+  padding: 100px 0 0 0;
+
+  @include onDesktop {
+    flex-direction: row;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.65rem;
+
+    @include onTablet {
+      gap: 3.45rem;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.65rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+
+    @include onTablet {
+      font-size: 3.45rem;
+    }
+  }
+
+  &__description {
+    font-size: .85rem;
+    color: var(--secondary-color);
+    line-height: 25.5px;
+    margin: 0;
+
+    @include onTablet {
+      font-size: 1rem;
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+
+    @include onDesktop {
+      max-height: 265px;
+    }
+  }
+}

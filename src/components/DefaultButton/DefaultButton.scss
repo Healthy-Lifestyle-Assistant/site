@@ -1,0 +1,27 @@
+@import '@styles/mixins.scss';
+
+.DefaultButton {
+  font-family: "Montserrat", sans-serif;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--bg-color);
+  background-color: var(--primary-color);
+  border-radius: 50px;
+  width: 150px;
+  height: 40px;
+  border: none;
+  box-shadow: 0 5px 20px rgba(255, 255, 255, .5);
+  transition: opacity .3s ease, box-shadow .3s ease;
+  cursor: pointer;
+
+  @include onTablet {
+    font-size: 1.15rem;
+    width: 155px;
+    height: 48px;
+  }
+
+  &:active {
+    opacity: .8;
+    box-shadow: none;
+  }
+}

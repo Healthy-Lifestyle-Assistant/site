@@ -58,6 +58,7 @@
     background: transparent;
     border: none;
     transition: opacity .3s ease;
+    cursor: pointer;
 
     &:active {
       opacity: .5;

@@ -11,7 +11,6 @@ interface NavbarLinkProps {
 
 export const NavbarLink: FC<NavbarLinkProps> = ({ title, to }) => {
   const { pathname } = useLocation();
-  const capitalizedTitle = title.charAt(0).toUpperCase() + title.slice(1).toLowerCase();
   return (
     <NavLink
       className={({ isActive }) => classNames(
@@ -20,7 +19,7 @@ export const NavbarLink: FC<NavbarLinkProps> = ({ title, to }) => {
       )}
       to={to}
     >
-      {capitalizedTitle}
+      {title}
       {pathname === to && (<motion.div className="NavbarLink__background" layoutId="NavbarLink_underline" />)}
     </NavLink>
   );
