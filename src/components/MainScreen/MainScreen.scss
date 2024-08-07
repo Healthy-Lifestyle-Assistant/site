@@ -1,19 +1,18 @@
 @import '@styles/mixins.scss';
 
 .MainScreen {
-  position: relative;
-  @extend %flex-center;
-  margin: 40px 0 0 0;
+  padding: 100px 0 0 0;
 
-  @include onTablet {
-    margin: 80px 0 0 0;
+  &__container {
+    position: relative;
+    @extend %flex-center;
   }
 
   &__background {
     max-width: 100%;
   }
 
-  &__container {
+  &__content {
     position: absolute;
     top: 0;
     left: 0;
@@ -40,7 +39,7 @@
     }
   }
 
-  &__content {
+  &__info {
     display: flex;
     flex-direction: column;
     gap: .8rem;
@@ -59,6 +58,7 @@
     @include onTablet {
       font-size: 3.45rem;
     }
+
     @include onDesktop {
       font-size: 4rem;
     }
@@ -73,6 +73,7 @@
     @include onTablet {
       font-size: .8rem;
     }
+
     @include onDesktop {
       font-size: 1rem;
     }
@@ -97,6 +98,7 @@
       min-width: 255px;
       min-height: 48px;
     }
+
     @include onDesktop {
       font-size: 1.15rem;
     }
