@@ -1,7 +1,7 @@
 export enum NavList {
-  HOME = '/',
-  ABOUT = '/about',
-  SERVICES = '/services',
-  TEAM = '/team',
-  BLOG = '/blog',
+  Home = '/',
+  About = '/about',
+  Services = '/services',
+  Team = '/team',
+  Blog = '/blog',
 }

@@ -10,6 +10,7 @@
   margin: 0;
   background-color: var(--bg-color);
   transition: .3s ease;
+  z-index: 100;
 
   @include onTablet {
     padding: 24px 48px;

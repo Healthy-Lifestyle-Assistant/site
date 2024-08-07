@@ -1,0 +1,111 @@
+@import '@styles/mixins.scss';
+
+.MainScreen {
+  padding: 100px 0 0 0;
+
+  &__container {
+    position: relative;
+    @extend %flex-center;
+  }
+
+  &__background {
+    max-width: 100%;
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    @extend %flex-center;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 1.8rem;
+    max-width: 200px;
+
+    @media (min-width: 425px) {
+      max-width: 250px;
+    }
+
+    @include onTablet {
+      max-width: 400px;
+      gap: 3.45rem;
+    }
+
+    @include onDesktop {
+      max-width: 430px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    text-align: center;
+
+    @include onTablet {
+      gap: 1.8rem;
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+
+    @include onTablet {
+      font-size: 3.45rem;
+    }
+
+    @include onDesktop {
+      font-size: 4rem;
+    }
+  }
+
+  &__description {
+    font-size: .6rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin: 0;
+
+    @include onTablet {
+      font-size: .8rem;
+    }
+
+    @include onDesktop {
+      font-size: 1rem;
+    }
+  }
+
+  &__button {
+    font-family: "Montserrat", sans-serif;
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--bg-color);
+    background-color: var(--primary-color);
+    border-radius: 50px;
+    min-width: 150px;
+    min-height: 40px;
+    border: none;
+    box-shadow: 0 5px 20px rgba(255, 255, 255, .5);
+    transition: opacity .3s ease, box-shadow .3s ease;
+    cursor: pointer;
+
+    @include onTablet {
+      font-size: 1rem;
+      min-width: 255px;
+      min-height: 48px;
+    }
+
+    @include onDesktop {
+      font-size: 1.15rem;
+    }
+
+    &:active {
+      opacity: .8;
+      box-shadow: none;
+    }
+  }
+}

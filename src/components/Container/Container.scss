@@ -1,0 +1,13 @@
+@import '@styles/mixins.scss';
+
+.Container {
+  padding: 0 24px;
+
+  @include onTablet {
+    padding: 0 48px;
+  }
+  @include onDesktop {
+    max-width: 1096px;
+    margin: 0 auto;
+  }
+}

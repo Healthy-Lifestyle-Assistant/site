@@ -10,16 +10,13 @@ interface BurgerMenuItemProps {
   onClick: () => void;
 }
 
-export const BurgerMenuItem: FC<BurgerMenuItemProps> = ({ title, to, isSelected, onClick }) => {
-  const capitalizedTitle = title.charAt(0).toUpperCase() + title.slice(1).toLowerCase();
-  return (
-    <li className="BurgerMenuItem" onClick={onClick} key={title}>
-      <NavLink to={to} className={classNames(
-        'BurgerMenuItem__link',
-        { 'BurgerMenuItem__link--active': isSelected }
-      )}>
-        {capitalizedTitle}
-      </NavLink>
-    </li>
-  );
-};
+export const BurgerMenuItem: FC<BurgerMenuItemProps> = ({ title, to, isSelected, onClick }) => (
+  <li className="BurgerMenuItem" onClick={onClick} key={title}>
+    <NavLink to={to} className={classNames(
+      'BurgerMenuItem__link',
+      { 'BurgerMenuItem__link--active': isSelected }
+    )}>
+      {title}
+    </NavLink>
+  </li>
+);
