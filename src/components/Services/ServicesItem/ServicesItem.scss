@@ -1,0 +1,44 @@
+@import '@styles/mixins.scss';
+
+.ServicesItem {
+  @extend %flex-center;
+  flex-direction: column;
+  gap: 1.65rem;
+  padding: 2.3rem;
+  border-bottom: 1px solid var(--border-color);;
+    @include onDesktop {
+      border-bottom: none;
+      border-right: 1px solid var(--border-color);
+    }
+
+  &--last {
+    border-bottom: none;
+    border-right: none;
+  }
+
+  &__frame {
+    @extend %flex-center;
+    min-width: 60px;
+    min-height: 60px;
+    border-radius: 50%;
+    background-color: var(--icon-color);
+  }
+
+  &__icon {
+    max-width: 32px;
+    max-height: 32px;
+  }
+
+  &__title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  &__description {
+    font-size: .8rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin: 0;
+  }
+}
