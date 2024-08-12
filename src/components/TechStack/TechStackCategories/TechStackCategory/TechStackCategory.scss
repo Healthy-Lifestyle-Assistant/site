@@ -1,7 +1,7 @@
 @import '@styles/mixins.scss';
 
 .TechStackCategory {
-  padding: .8rem;
+  padding: 12px;
   font-size: .75rem;
   font-weight: 500;
   background-color: var(--bg-color);
@@ -13,7 +13,7 @@
 
   @include onTablet {
     font-size: 1rem;
-    padding: .8rem 1.2rem;
+    padding: 12px 18px;
   }
   
   &:active {

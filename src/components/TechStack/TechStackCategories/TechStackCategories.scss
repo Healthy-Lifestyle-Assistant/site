@@ -4,10 +4,10 @@
   @extend %flex-center;
   flex-wrap: wrap;
   gap: .8rem;
-  padding: 3.4rem 0 1.7rem 0;
+  padding: 48px 0 24px 0;
   border-bottom: 1px solid var(--border-color);
 
   @include onTablet {
-    padding: 3.4rem 1.7rem 1.7rem 1.7rem;
+    padding: 48px 24px 24px;
   } 
 }
