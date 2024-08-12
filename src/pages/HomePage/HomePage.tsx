@@ -4,6 +4,7 @@ import { Container } from '@components/Container';
 import { MainScreen } from '@components/MainScreen';
 import { About } from '@components/About';
 import { Services } from '@components/Services';
+import { TechStack } from '@components/TechStack';
 
 export const HomePage: FC = () => {
   return (
@@ -12,6 +13,7 @@ export const HomePage: FC = () => {
         <MainScreen />
         <About />
         <Services />
+        <TechStack />
       </Container>
     </div>
   );
