@@ -7,7 +7,7 @@ export const Contacts: FC = () => {
       <iframe
         className="Contacts__form"
         id="contacts"
-        src="https://docs.google.com/forms/d/e/1FAIpQLSeOcAJav0SSb0SLxpul00qbeafLHplcz6FjrcM7CK9ZhhETXQ/viewform?embedded=true"
+        src="https://fm.addxt.com/form/?vf=1FAIpQLSeOcAJav0SSb0SLxpul00qbeafLHplcz6FjrcM7CK9ZhhETXQ"
         width="640"
         height="821"
         frameBorder="0"
