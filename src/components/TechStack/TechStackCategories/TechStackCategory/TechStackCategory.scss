@@ -1,0 +1,27 @@
+@import '@styles/mixins.scss';
+
+.TechStackCategory {
+  padding: 12px;
+  font-size: .75rem;
+  font-weight: 500;
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 20px;
+  transition: color .3s ease, border .3s ease, background-color .3s ease, opacity .3s ease;
+  cursor: pointer;
+
+  @include onTablet {
+    font-size: 1rem;
+    padding: 12px 18px;
+  }
+  
+  &:active {
+    opacity: .7;
+  }
+
+  &--selected {
+    color: var(--bg-color);
+    background-color: var(--primary-color);
+  }
+}

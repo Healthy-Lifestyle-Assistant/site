@@ -1,0 +1,37 @@
+@import '@styles/mixins.scss';
+
+.TechStack {
+  padding: 100px 0 0 0;
+
+  &__info {
+    @extend %flex-center;
+    flex-direction: column;
+    text-align: center;
+    gap: 1.65rem;
+
+    @include onTablet {
+      gap: 2.25rem;
+    }
+  }
+  &__title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+
+    @include onTablet {
+      font-size: 3.45rem;
+    }
+  }
+
+  &__description {
+    font-size: .85rem;
+    color: var(--secondary-color);
+    line-height: 25.5px;
+    max-width: 400px;
+    margin: 0;
+
+    @include onTablet {
+      font-size: 1rem;
+    }
+  }
+}

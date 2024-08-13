@@ -1,0 +1,13 @@
+@import '@styles/mixins.scss';
+
+.TechStackDirections {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 28px 0 0 ;
+
+  @include onTablet {
+    gap: 2.25rem;
+    padding: 48px 0 0;
+  }
+}
