@@ -4,6 +4,7 @@ import './Contacts.scss';
 export const Contacts: FC = () => {
   return (
     <section className="Contacts">
+      <h2 className="Contacts__title">Contact Us</h2>
       <iframe
         className="Contacts__form"
         id="contacts"

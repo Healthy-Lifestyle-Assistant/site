@@ -2,5 +2,22 @@
 
 .Contacts {
   @extend %flex-center;
+  flex-direction: column;
   padding: 100px 0;
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+    margin-bottom: 48px;
+
+    @include onTablet {
+      font-size: 3.45rem;
+    }
+  }
+
+  &__form {
+    width: 100%;
+  }
 }
