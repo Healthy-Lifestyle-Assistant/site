@@ -10,6 +10,7 @@ import javaIcon from '@assets/icons/java.png';
 import springIcon from '@assets/icons/spring.png';
 import sqlIcon from '@assets/icons/sql.png';
 import dockerIcon from '@assets/icons/docker.png';
+import { AnimatePresence } from 'framer-motion';
 
 const technologiesFrontend = [
   { icon: jsIcon, title: 'Javascript' },
@@ -57,15 +58,17 @@ export const TechStackDirections: FC<TechStackDirectionProps> = ({ selectedCateg
 
   return (
     <div className="TechStackDirections">
-      {visibleTechDirections.map(({ title, description, btnText, technologies }) => (
-        <TechStackDirection
-          key={title}
-          title={title}
-          description={description}
-          btnText={btnText}
-          technologies={technologies}
-        />
-      ))}
+      <AnimatePresence>
+        {visibleTechDirections.map(({ title, description, btnText, technologies }) => (
+          <TechStackDirection
+            key={title}
+            title={title}
+            description={description}
+            btnText={btnText}
+            technologies={technologies}
+          />
+        ))}
+      </AnimatePresence>
     </div>
   );
 };

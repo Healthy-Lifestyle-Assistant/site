@@ -5,6 +5,7 @@ import { MainScreen } from '@components/MainScreen';
 import { About } from '@components/About';
 import { Services } from '@components/Services';
 import { TechStack } from '@components/TechStack';
+import { Team } from '@components/Team';
 
 export const HomePage: FC = () => {
   return (
@@ -14,6 +15,7 @@ export const HomePage: FC = () => {
         <About />
         <Services />
         <TechStack />
+        <Team />
       </Container>
     </div>
   );
