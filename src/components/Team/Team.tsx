@@ -6,24 +6,24 @@ import linkedInIcon from '@assets/icons/linkedin.svg';
 
 const teamMembers = [
   {
-    name: 'Oleg Kucherenko1',
-    position: 'Tech Lead, Full-Stack Developer',
+    name: 'Oleg Kucherenko',
+    position: 'Java Developer',
     socialMedias: [{ icon: linkedInIcon, title: 'LinkedIn', link: 'https://www.linkedin.com/in/oleg-kucherenko/' }]
   },
   {
-    name: 'Oleg Kucherenko2',
-    position: 'Tech Lead, Full-Stack Developer',
-    socialMedias: [{ icon: linkedInIcon, title: 'LinkedIn', link: 'https://www.linkedin.com/in/oleg-kucherenko/' }]
+    name: 'Vladyslav Penkin',
+    position: 'Frontend Developer',
+    socialMedias: [{ icon: linkedInIcon, title: 'LinkedIn', link: 'https://www.linkedin.com/in/vladyslav-penkin-frontend/' }]
   },
   {
-    name: 'Oleg Kucherenko3',
-    position: 'Tech Lead, Full-Stack Developer',
-    socialMedias: [{ icon: linkedInIcon, title: 'LinkedIn', link: 'https://www.linkedin.com/in/oleg-kucherenko/' }]
+    name: 'Anastasiia Shevchuk',
+    position: 'Java Developer',
+    socialMedias: [{ icon: linkedInIcon, title: 'LinkedIn', link: 'https://www.linkedin.com/in/anastasiia-shevchuk-66092a198/' }]
   },
   {
-    name: 'Oleg Kucherenko4',
-    position: 'Tech Lead, Full-Stack Developer',
-    socialMedias: [{ icon: linkedInIcon, title: 'LinkedIn', link: 'https://www.linkedin.com/in/oleg-kucherenko/' }]
+    name: 'Volodymyr Bardakov',
+    position: 'Full-Stack Developer',
+    socialMedias: [{ icon: linkedInIcon, title: 'LinkedIn', link: 'https://www.linkedin.com/in/volodymyr-bardakov-384887294/' }]
   }
 ];
 
