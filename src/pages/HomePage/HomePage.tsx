@@ -6,7 +6,7 @@ import { About } from '@components/About';
 import { Services } from '@components/Services';
 import { TechStack } from '@components/TechStack';
 import { Team } from '@components/Team';
-import { Contacts } from '@components/Contacts';
+import { ContactUs } from '@components/ContactUs';
 
 export const HomePage: FC = () => {
   return (
@@ -17,8 +17,8 @@ export const HomePage: FC = () => {
         <Services />
         <TechStack />
         <Team />
-        <Contacts />
       </Container>
+      <ContactUs />
     </div>
   );
 };

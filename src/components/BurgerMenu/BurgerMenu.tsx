@@ -1,4 +1,4 @@
-import { FC, useMemo, useState } from 'react';
+import { FC, useState } from 'react';
 import './BurgerMenu.scss';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -6,15 +6,14 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { BurgerMenuModal } from '@components/BurgerMenuModal';
 import { BurgerMenuItem } from '@components/BurgerMenu/BurgerMenuItem';
 import { BurgerMenuOption } from '@components/BurgerMenu/BurgerMenuOption';
-import { NavList } from '@/types/NavList';
 import { Languages } from '@/types/Languages';
+import { navigation } from '@/constants/navigation';
 
 interface BurgerMenuProps {
   onClick: () => void;
 }
 
 export const BurgerMenu: FC<BurgerMenuProps> = ({ onClick }) => {
-  const navigationList = useMemo(() => Object.entries(NavList), []);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { i18n } = useTranslation();
   const { pathname } = useLocation();
@@ -32,7 +31,7 @@ export const BurgerMenu: FC<BurgerMenuProps> = ({ onClick }) => {
       className="BurgerMenu"
     >
       <ul className="BurgerMenu__list">
-        {navigationList.map(([title, to]) => (
+        {navigation.map(({ title, to }) => (
           <BurgerMenuItem
             key={title}
             title={title}
