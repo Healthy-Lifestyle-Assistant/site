@@ -17,6 +17,7 @@ export const App: FC = () => {
             <Route path="about" element={<HomePage />} />
             <Route path="services" element={<HomePage />} />
             <Route path="team" element={<HomePage />} />
+            <Route path="contacts" element={<HomePage />} />
             <Route path="blog" element={<BlogPage />} />
           </Route>
         </Routes>

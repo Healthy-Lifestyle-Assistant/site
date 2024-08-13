@@ -1,9 +1,18 @@
-import { FC } from 'react';
+import { FC, useEffect, useRef } from 'react';
 import './Contacts.scss';
+import { useLocation } from 'react-router-dom';
 
 export const Contacts: FC = () => {
+  const { pathname } = useLocation();
+  const contactsRef = useRef<HTMLElement | null>(null);
+  useEffect(() => {
+    if (pathname === '/contacts') {
+      contactsRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [pathname]);
+
   return (
-    <section className="Contacts">
+    <section className="Contacts" ref={contactsRef}>
       <h2 className="Contacts__title">Contact Us</h2>
       <iframe
         className="Contacts__form"
