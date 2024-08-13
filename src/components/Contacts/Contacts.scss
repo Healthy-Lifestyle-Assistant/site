@@ -1,0 +1,6 @@
+@import '@styles/mixins.scss';
+
+.Contacts {
+  @extend %flex-center;
+  padding: 100px 0;
+}
