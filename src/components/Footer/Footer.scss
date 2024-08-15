@@ -1,0 +1,30 @@
+@import '@styles/mixins.scss';
+
+.Footer {
+  &__container {
+    padding: 60px 32px;
+    margin: 100px 0 0 0;
+    background-color: var(--card-color);
+
+    @include onDesktop {
+      padding: 80px;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 265px;
+    align-items: flex-start;
+    justify-content: center;
+    justify-items: flex-start;
+    gap: 1.65rem;
+
+    @include onDesktop {
+      grid-template-columns: repeat(3, 265px);
+      justify-content: space-between;
+      justify-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+  }
+}

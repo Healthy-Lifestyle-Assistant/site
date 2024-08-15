@@ -1,0 +1,34 @@
+@import '@styles/mixins.scss';
+
+.FooterInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1.65rem;
+
+  &__title {
+    font-size: 1.85rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  &__description {
+    font-size: .8rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+  }
+
+  &__list {
+    display: flex;
+    gap: 1.65rem;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__icon {
+    max-width: 18px;
+    max-height: 18px;
+  }
+}
