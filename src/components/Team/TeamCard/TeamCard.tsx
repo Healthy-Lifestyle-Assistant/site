@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import './TeamCard.scss';
 
-interface SocialMeida {
+interface SocialMedia {
   icon: string;
   title: string;
   link: string;
@@ -10,7 +10,7 @@ interface SocialMeida {
 interface TeamCardProps {
   name: string;
   position: string;
-  socialMedias: SocialMeida[];
+  socialMedias: SocialMedia[];
 }
 
 export const TeamCard: FC<TeamCardProps> = ({ name, position, socialMedias }) => {
