@@ -1,0 +1,36 @@
+@import '@styles/mixins.scss';
+
+.InputField {
+  max-width: 448px;
+  width: 100%;
+
+  @include onDesktop {
+    max-width: 300px;
+  }
+
+  &__input {
+    font-size: 1rem;
+    max-width: 448px;
+    width: 100%;
+    padding: 14px 24px;
+    border: 1px solid var(--primary-color);
+    border-radius: 50px;
+    color: var(--primary-color);
+    caret-color: var(--primary-color);
+    background-color: var(--card-color);
+    outline: 0;
+
+    @include onDesktop {
+      max-width: 300px;
+    }
+
+    &::placeholder {
+      font-size: 1rem;
+      color: var(--primary-color);
+    }
+
+    &--error {
+      border: 1px solid var(--red-color);
+    }
+  }
+}

@@ -5,28 +5,31 @@
   flex-direction: column;
 
   &__container {
-    overflow: hidden;
     width: 100%;
     background-color: var(--card-color);
-    margin: 48px 0 0;
-    padding: 24px 24px 12px 24px;
-    max-width: 928px;
+    margin: 100px 0 0;
+    padding: 48px 24px;
+    max-width: 1024px;
 
     @include onTablet {
-      padding: 48px 48px 24px 48px;
+      padding: 48px;
     }
 
     @include onDesktop {
-      border-radius: 50px;
+      border-radius: 30px;
+      max-width: 928px;
+      background-image: url(../../assets/images/contact-bg.png);
+      background-size: 90%;
+      background-position: 50% 30%;
+      background-repeat: no-repeat;
     }
   }
 
   &__title {
     font-size: 2rem;
     font-weight: 600;
-    margin: 0;
+    margin: 0 0 48px 0;
     text-align: center;
-    padding: 100px 0 0 0;
 
     @include onTablet {
       font-size: 2.65rem;
@@ -34,6 +37,27 @@
   }
 
   &__form {
-    width: 100%;
+    @extend %flex-center;
+    flex-direction: column;
+    gap: 2.85rem;
   }
+
+  &__inputs {
+    @extend %flex-center;
+    flex-direction: column;
+    gap: 2.85rem;
+    width: 100%;
+
+    @include onDesktop {
+      gap: 2.85rem;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      max-width: 650px;
+    }
+  }
+}
+
+.Toastify__toast {
+  background-color: var(--card-color);
+  color: var(--primary-color);
 }
