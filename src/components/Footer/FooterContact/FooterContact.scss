@@ -1,0 +1,33 @@
+.FooterContact {
+  &__title {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: .9rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .7rem;
+  }
+
+  &__icon {
+    max-width: 16px;
+    max-height: 16px;
+  }
+
+  &__info {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--secondary-color);
+    margin: 0;
+  }
+}
