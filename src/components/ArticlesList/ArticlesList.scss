@@ -1,0 +1,16 @@
+@import '@styles/mixins.scss';
+
+.ArticlesList {
+  &__container {
+    @extend %flex-center;
+    flex-direction: column;
+    gap: 3.45rem;
+    margin: 48px 0 0 0;
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 2.45rem;
+      min-width: 900px;
+    }
+  }
+}
