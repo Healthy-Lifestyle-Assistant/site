@@ -1,0 +1,15 @@
+.LinkLineItem {
+  display: flex;
+  gap: .9rem;
+  align-items: center;
+
+  &__link {
+    font-weight: 400;
+    color: var(--primary-color);
+    text-decoration: none;
+
+    &--active {
+      color: var(--secondary-color);
+    }
+  }
+}
