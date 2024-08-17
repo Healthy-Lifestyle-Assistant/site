@@ -1,0 +1,10 @@
+.LinkLine {
+  display: flex;
+  gap: .9rem;
+  align-items: center;
+
+  &__icon {
+    max-width: 14px;
+    max-height: 14px;
+  }
+}

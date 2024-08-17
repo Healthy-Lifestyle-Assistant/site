@@ -1,0 +1,24 @@
+.CategoriesFilterItem {
+  position: relative;
+
+  &__button {
+    background: none;
+    border: none;
+    padding: 12px 0;
+    color: var(--secondary-color);
+    cursor: pointer;
+
+    &--active {
+      color: var(--primary-color);
+    }
+  }
+
+  &__underline {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border: 1px solid var(--primary-color);
+    border-radius: 50px;
+  }
+}

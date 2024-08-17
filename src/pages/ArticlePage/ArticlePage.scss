@@ -1,0 +1,93 @@
+@import '@styles/mixins.scss';
+
+.ArticlePage {
+  padding: 48px 0 0;
+
+  @include onDesktop {
+    padding: 100px 0 0;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+
+    @include onTablet {
+      gap: 3.45rem;
+    }
+
+  }
+
+  &__intro {
+    position: relative;
+    @extend %flex-center;
+    flex-direction: column;
+    gap: 1.75rem;
+    overflow: hidden;
+    padding: 24px;
+    margin: 24px 0;
+    height: 320px;
+    z-index: 1;
+
+    @include onTablet {
+      margin: 48px 0;
+      padding: 48px;
+    }
+
+    &::after {
+      content: "";
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--intro-gradient);
+      opacity: 1;
+      z-index: -1;
+    }
+  }
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  &__head {
+    font-size: 2.55rem;
+    margin: 0;
+    text-align: center;
+
+    @include onTablet {
+      font-size: 4rem;
+    }
+  }
+
+  &__info {
+    display: flex;
+    gap: 1.45rem;
+  }
+
+  &__time {
+    display: flex;
+    align-items: center;
+    gap: .9rem;
+
+    &-icon {
+      max-width: 16px;
+      max-height: 16px;
+    }
+
+    &-text {
+      font-weight: 400;
+      margin: 0;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef } from 'react';
 import './MainScreen.scss';
-import backgrounImage from '@assets/images/earth-grid.png';
+import backgroundImage from '@assets/images/earth-grid.png';
 import { useLocation } from 'react-router-dom';
 
 export const MainScreen: FC = () => {
@@ -15,7 +15,7 @@ export const MainScreen: FC = () => {
   return (
     <section className="MainScreen" ref={mainRef}>
       <div className="MainScreen__container">
-        <img className="MainScreen__background" src={backgrounImage} alt="earth-grid" />
+        <img className="MainScreen__background" src={backgroundImage} alt="earth-grid" />
         <div className="MainScreen__content">
           <div className="MainScreen__info">
             <h2 className="MainScreen__title">Lorem Ipsum.</h2>
