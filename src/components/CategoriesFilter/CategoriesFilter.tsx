@@ -18,8 +18,9 @@ export const CategoriesFilter: FC<CategoriesFilterProps> = ({ categories, select
   return (
     <div className="CategoriesFilter">
       <ul className="CategoriesFilter__list">
-        {categories.map(({ title, category }) => (
+        {categories.map(({ title, category }, index) => (
           <CategoriesFilterItem
+            key={index}
             title={title}
             category={category}
             isSelected={selectedCategory === category}

@@ -10,8 +10,8 @@ export const ArticleItem: FC<ArticleItemProps> = ({ title, descriptions }) => {
   return (
     <div className="ArticleItem">
       <h3 className="ArticleItem__title">{title}</h3>
-      {descriptions.map((description) => (
-        <p className="ArticleItem__description">{description}</p>
+      {descriptions.map((description, index) => (
+        <p className="ArticleItem__description" key={index}>{description}</p>
       ))}
     </div>
   );

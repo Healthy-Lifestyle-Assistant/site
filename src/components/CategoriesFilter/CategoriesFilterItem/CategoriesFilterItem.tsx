@@ -11,9 +11,9 @@ interface CategoriesFilterItemProps {
   onClick: () => void;
 }
 
-export const CategoriesFilterItem: FC<CategoriesFilterItemProps> = ({ title, category, isSelected, onClick }) => {
+export const CategoriesFilterItem: FC<CategoriesFilterItemProps> = ({ title, isSelected, onClick }) => {
   return (
-    <li className="CategoriesFilterItem" key={category} onClick={onClick}>
+    <li className="CategoriesFilterItem" onClick={onClick}>
       <button className={classNames(
         'CategoriesFilterItem__button',
         { 'CategoriesFilterItem__button--active': isSelected }

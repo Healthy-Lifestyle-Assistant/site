@@ -10,8 +10,8 @@ interface ArticleListProps {
 export const ArticleList: FC<ArticleListProps> = ({ article }) => {
   return (
     <article className="ArticleList">
-      {article.content.map(({ title, descriptions }) => (
-        <ArticleItem key={title} title={title} descriptions={descriptions} />
+      {article.content.map(({ title, descriptions }, index) => (
+        <ArticleItem key={index} title={title} descriptions={descriptions} />
       ))}
     </article>
   );
