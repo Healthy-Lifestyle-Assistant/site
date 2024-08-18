@@ -3,17 +3,20 @@ import './FooterContact.scss';
 import phoneIcon from '@assets/icons/phone.png';
 import emailIcon from '@assets/icons/email.png';
 import addressIcon from '@assets/icons/location.png';
-
-const contacts = [
-  { icon: phoneIcon, title: '+38 (066) 886 3821', alt: 'phone' },
-  { icon: emailIcon, title: 'info@novaserve-digital.com', alt: 'email' },
-  { icon: addressIcon, title: 'Bazarna Street, 18, Odesa, Ukraine', alt: 'address' }
-];
+import { useTranslation } from 'react-i18next';
 
 export const FooterContact: FC = () => {
+  const { t } = useTranslation('home');
+
+  const contacts = [
+    { icon: phoneIcon, title: t('footer.contacts.phone'), alt: 'phone' },
+    { icon: emailIcon, title: t('footer.contacts.email'), alt: 'email' },
+    { icon: addressIcon, title: t('footer.contacts.address'), alt: 'address' }
+  ];
+
   return (
     <div className="FooterContact">
-      <h4 className="FooterContact__title">Contact</h4>
+      <h4 className="FooterContact__title">{t('footer.contacts.frame')}</h4>
       <ul className="FooterContact__list">
         {contacts.map(({ icon, title, alt }) => (
           <li className="FooterContact__item" key={title}>

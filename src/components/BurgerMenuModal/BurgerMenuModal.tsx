@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { BurgerMenuModalItem } from '@components/BurgerMenuModal/BurgerMenuModalItem';
 import { Languages } from '@/types/Languages';
 import closeIcon from '@assets/icons/close.png';
+import { useTranslation } from 'react-i18next';
 
 interface BurgerMenuModalProps {
   title: string;
@@ -13,13 +14,14 @@ interface BurgerMenuModalProps {
   onSelect: (value: string) => void;
 }
 
-const modalNames = {
-  [Languages.EN]: 'English',
-  [Languages.RU]: 'Russian',
-  [Languages.UK]: 'Ukrainian',
-};
-
 export const BurgerMenuModal: FC<BurgerMenuModalProps> = ({ variables, title, currentValue, onClose, onSelect }) => {
+  const { t } = useTranslation('home');
+  const modalNames = {
+    [Languages.EN]: t(`header.langs.names.${Languages.EN}`),
+    [Languages.RU]: t(`header.langs.names.${Languages.RU}`),
+    [Languages.UK]: t(`header.langs.names.${Languages.UK}`),
+  };
+
   const handleSubmit = (value: string) => {
     onSelect(value);
     onClose();

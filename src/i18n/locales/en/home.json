@@ -1,0 +1,164 @@
+{
+  "header": {
+    "logo": "NovaServe",
+    "navigation": {
+      "home": "Home",
+      "about": "About Us",
+      "services": "Services",
+      "team": "Team",
+      "contact": "Contacts Us",
+      "languages": "Languages"
+    },
+    "langs": {
+      "en": "EN",
+      "ru": "RU",
+      "uk": "UK",
+      "names": {
+        "frame": "Choose a website language",
+        "en": "English",
+        "ru": "Russian",
+        "uk": "Ukrainian"
+      }
+    }
+  },
+  "main": {
+    "title": "NovaServe",
+    "description": "A progressive and fast-growing organization that brings together talent to create innovative and effective software development solutions. ",
+    "button": "Learn More"
+  },
+  "about": {
+    "frame": "Who we are",
+    "title": "About Us",
+    "description": "NovaServe is more than just a team; we're a diverse collective of designers, developers, QA engineers, project managers, and business analysts united by a common mission: to empower your business to reach its full potential through the strategic application of digital technologies...",
+    "button": "Let's Talk"
+  },
+  "services": {
+    "frame": "What are you looking for",
+    "title": "Our Services",
+    "description": "We provide innovative solutions tailored to meet your needs in various areas of the tech industry. Our expertise spans across web application development, startup support, and MVP creation, ensuring that we deliver high-quality results to help you achieve your goals.",
+    "button": "Let's Talk",
+    "webapps": {
+      "title": "Web Apps",
+      "description": "We create dynamic, user-friendly web apps using the latest technologies to meet your needs and support business growth."
+    },
+    "startups": {
+      "title": "Startups",
+      "description": "We support startups from idea to launch, providing strategic planning, product development, and market entry strategies."
+    },
+    "mvp": {
+      "title": "MVP",
+      "description": "We develop MVPs to validate your idea, gather feedback, and guide future improvements, ensuring functionality and alignment with your strategy."
+    }
+  },
+  "stack": {
+    "frame": "What are we using",
+    "title": "Our Technology Stack",
+    "description": "We use a cutting-edge technology stack to create robust, scalable solutions, covering both frontend and backend development to meet your needs.",
+    "categories": {
+      "all": "All",
+      "frontend": "Frontend Development",
+      "backend": "Backend Development"
+    },
+    "tech": "Technologies",
+    "cards": {
+      "frontend": {
+        "title": "Frontend Development",
+        "description": "Our frontend development team focuses on creating intuitive and engaging user interfaces. We use the latest technologies to build responsive and visually appealing web applications that enhance user experience and drive interaction.",
+        "button": "Learn More",
+        "technologies": {
+          "javascript": "Javascript",
+          "typescript": "Typescript",
+          "react": "React",
+          "vue": "Vue"
+        }
+      },
+      "backend": {
+        "title": "Backend Development",
+        "description": "Our backend development services ensure that your applications are supported by robust and scalable server-side solutions. We build APIs, manage databases, and implement business logic to power your web applications efficiently.",
+        "button": "Learn More",
+        "technologies": {
+          "java": "Java",
+          "spring": "Spring Boot",
+          "sql": "SQL",
+          "docker": "Docker"
+        }
+      }
+    }
+  },
+  "team": {
+    "title": "Our Team",
+    "members": {
+      "1": {
+        "name": "Oleg Kucherenko",
+        "position": "Java Developer",
+        "linkedIn": "LinkedIn"
+      },
+      "2": {
+        "name": "Vladyslav Penkin",
+        "position": "Frontend Developer",
+        "linkedIn": "LinkedIn"
+      },
+      "3": {
+        "name": "Anastasiia Shevchuk",
+        "position": "Java Developer",
+        "linkedIn": "LinkedIn"
+      },
+      "4": {
+        "name": "Volodymyr Bardakov",
+        "position": "Full-Stack Developer",
+        "linkedIn": "LinkedIn"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "firstname": "First Name",
+    "lastname": "Last Name",
+    "email": "Email",
+    "message": "Message",
+    "button": "Send",
+    "request": {
+      "error": "Something went wrong. Try again.",
+      "loading": "Sending your message...",
+      "failed": "Something went wrong",
+      "success": "Your message has been sent successfully!"
+    },
+    "validation": {
+      "firstname": {
+        "required": "First Name is required",
+        "minLength": "First Name must be at least {{count}} characters long",
+        "maxLength": "First Name must be no more than {{count}} characters long"
+      },
+      "lastname": {
+        "required": "Last Name is required",
+        "minLength": "Last Name must be at least {{count}} characters long",
+        "maxLength": "Last Name must be no more than {{count}} characters long"
+      },
+      "email": {
+        "required": "Email is required",
+        "maxLength": "Email must be no more than {{count}} characters long",
+        "missingAtSymbol": "Email should contain an '@' symbol.",
+        "missingTextAroundAtSymbol": "Email should contain an '@' symbol with text before and after it.",
+        "invalidDomainFormat": "Email should contain a '.' symbol (not the first or last character).",
+        "lengthOutOfRange": "Email length should be between {{ minLength }} and {{ maxLength }} characters.",
+        "forbiddenCharacters": "Email contains forbidden characters: ({{forbiddenChars}}).",
+        "invalidFormat": "Invalid email address format."
+      },
+      "message": {
+        "required": "Message is required",
+        "minLength": "Message must be at least {{count}} characters long",
+        "maxLength": "Message must be no more than {{count}} characters long"
+      }
+    }
+  },
+  "footer": {
+    "title": "NovaServe",
+    "description": "At NovaServe, we are dedicated to transforming your business through innovative digital solutions. Our commitment is to deliver exceptional value and results by leveraging the latest technologies and industry best practices.",
+    "contacts": {
+      "frame": "Contact",
+      "phone": "+38 (066) 886 3821",
+      "email": "info@novaserve-digital.com",
+      "address": "Bazarna Street, 18, Odesa, Ukraine"
+    }
+  }
+}

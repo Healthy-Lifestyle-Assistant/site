@@ -1,9 +1,11 @@
 import { FC, useEffect, useRef } from 'react';
 import './MainScreen.scss';
+import { useTranslation } from 'react-i18next';
 import backgroundImage from '@assets/images/earth-grid.png';
 import { useLocation } from 'react-router-dom';
 
 export const MainScreen: FC = () => {
+  const { t } = useTranslation('home');
   const { pathname } = useLocation();
   const mainRef = useRef<HTMLElement | null>(null);
   useEffect(() => {
@@ -18,12 +20,12 @@ export const MainScreen: FC = () => {
         <img className="MainScreen__background" src={backgroundImage} alt="earth-grid" />
         <div className="MainScreen__content">
           <div className="MainScreen__info">
-            <h2 className="MainScreen__title">Lorem Ipsum.</h2>
+            <h2 className="MainScreen__title">{t('main.title')}</h2>
             <p className="MainScreen__description">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+              {t('main.description')}
             </p>
           </div>
-          <button className="MainScreen__button">Lorem Ipsum</button>
+          <button className="MainScreen__button">{t('main.button')}</button>
         </div>
       </div>
     </section>

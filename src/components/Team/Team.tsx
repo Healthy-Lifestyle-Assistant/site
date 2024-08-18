@@ -3,31 +3,10 @@ import './Team.scss';
 import { useLocation } from 'react-router-dom';
 import { TeamCard } from '@components/Team/TeamCard';
 import linkedInIcon from '@assets/icons/linkedin.svg';
-
-const teamMembers = [
-  {
-    name: 'Oleg Kucherenko',
-    position: 'Java Developer',
-    socialMedias: [{ icon: linkedInIcon, title: 'LinkedIn', link: 'https://www.linkedin.com/in/oleg-kucherenko/' }]
-  },
-  {
-    name: 'Vladyslav Penkin',
-    position: 'Frontend Developer',
-    socialMedias: [{ icon: linkedInIcon, title: 'LinkedIn', link: 'https://www.linkedin.com/in/vladyslav-penkin-frontend/' }]
-  },
-  {
-    name: 'Anastasiia Shevchuk',
-    position: 'Java Developer',
-    socialMedias: [{ icon: linkedInIcon, title: 'LinkedIn', link: 'https://www.linkedin.com/in/anastasiia-shevchuk-66092a198/' }]
-  },
-  {
-    name: 'Volodymyr Bardakov',
-    position: 'Full-Stack Developer',
-    socialMedias: [{ icon: linkedInIcon, title: 'LinkedIn', link: 'https://www.linkedin.com/in/volodymyr-bardakov-384887294/' }]
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export const Team: FC = () => {
+  const { t } = useTranslation('home');
   const { pathname } = useLocation();
   const teamRef = useRef<HTMLElement | null>(null);
   useEffect(() => {
@@ -36,9 +15,33 @@ export const Team: FC = () => {
     }
   }, [pathname]);
 
+  const teamMembers = [
+    {
+      name: t('team.members.1.name'),
+      position: t('team.members.1.position'),
+      socialMedias: [{ icon: linkedInIcon, title: 'LinkedIn', link: 'https://www.linkedin.com/in/oleg-kucherenko/' }]
+    },
+    {
+      name: t('team.members.2.name'),
+      position: t('team.members.2.position'),
+      socialMedias: [{ icon: linkedInIcon, title: 'LinkedIn', link: 'https://www.linkedin.com/in/vladyslav-penkin-frontend/' }]
+    },
+    {
+      name: t('team.members.3.name'),
+      position: t('team.members.3.position'),
+      socialMedias: [{ icon: linkedInIcon, title: 'LinkedIn', link: 'https://www.linkedin.com/in/anastasiia-shevchuk-66092a198/' }]
+    },
+    {
+      name: t('team.members.4.name'),
+      position: t('team.members.4.position'),
+      socialMedias: [{ icon: linkedInIcon, title: 'LinkedIn', link: 'https://www.linkedin.com/in/volodymyr-bardakov-384887294/' }]
+    }
+  ];
+  
+
   return (
     <section className="Team" ref={teamRef}>
-      <h3 className="Team__title">Our Team</h3>
+      <h3 className="Team__title">{t('team.title')}</h3>
 
       <div className="Team__list">
         {teamMembers.map(({ name, position, socialMedias }) => (

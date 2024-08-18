@@ -3,13 +3,16 @@
 .ServicesItem {
   @extend %flex-center;
   flex-direction: column;
+  flex-basis: 33%;
   gap: 1.65rem;
   padding: 2.3rem;
-  border-bottom: 1px solid var(--border-color);;
-    @include onDesktop {
-      border-bottom: none;
-      border-right: 1px solid var(--border-color);
-    }
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+
+  @include onDesktop {
+    border-bottom: none;
+    border-right: 1px solid var(--border-color);
+  }
 
   &--last {
     border-bottom: none;

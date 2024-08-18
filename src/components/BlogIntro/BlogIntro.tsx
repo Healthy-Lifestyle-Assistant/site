@@ -1,8 +1,10 @@
 import { FC, useEffect } from 'react';
 import './BlogIntro.scss';
+import { useTranslation } from 'react-i18next';
 import backgroundImage from '@assets/images/blog-grid.png';
 
 export const BlogIntro: FC = () => {
+  const { t } = useTranslation('blog');
   useEffect(() => {
     scrollTo(0, 0);
   }, []);
@@ -13,10 +15,8 @@ export const BlogIntro: FC = () => {
         <img className="BlogIntro__background" src={backgroundImage} alt="blog" />
         <div className="BlogIntro__content">
           <div className="BlogIntro__info">
-            <h2 className="BlogIntro__title">Our Blog</h2>
-            <p className="BlogIntro__description">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            </p>
+            <h2 className="BlogIntro__title">{t('main.title')}</h2>
+            <p className="BlogIntro__description">{t('main.description')}</p>
           </div>
         </div>
       </div>

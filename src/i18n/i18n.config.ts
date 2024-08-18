@@ -1,31 +1,40 @@
 import i18next from 'i18next';
 import 'intl-pluralrules';
 import { initReactI18next } from 'react-i18next';
-import en from './translations/en.json';
-import ru from './translations/ru.json';
-import uk from './translations/uk.json';
+import LanguageDetector from 'i18next-browser-languagedetector';
+import homeEn from './locales/en/home.json';
+import blogEn from './locales/en/blog.json';
+import homeRu from './locales/ru/home.json';
+import blogRu from './locales/ru/blog.json';
+import homeUk from './locales/uk/home.json';
+import blogUk from './locales/uk/blog.json';
 
 const resources = {
   en: {
-    translation: en,
+    home: homeEn,
+    blog: blogEn,
   },
   ru: {
-    translation: ru,
+    home: homeRu,
+    blog: blogRu,
   },
   uk: {
-    translation: uk,
+    home: homeUk,
+    blog: blogUk,
   }
 };
 
-i18next.use(initReactI18next).init({
-  debug: true,
-  lng: 'en',
-  fallbackLng: 'en',
-  interpolation: {
-    escapeValue: false,
-  },
-  resources,
-});
+i18next
+  .use(initReactI18next)
+  .use(LanguageDetector)
+  .init({
+    debug: true,
+    fallbackLng: 'en',
+    interpolation: {
+      escapeValue: false,
+    },
+    resources,
+  });
 
 
 export default i18next;

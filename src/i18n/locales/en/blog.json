@@ -1,0 +1,15 @@
+{
+  "main": {
+    "title": "Our Blog",
+    "description": "Welcome to our blog! Here, we share insights, updates, and industry news to keep you informed and inspired. Our posts cover a range of topics from technology trends to company news, offering valuable perspectives and knowledge to our readers."
+  },
+  "categories": {
+    "all": "View All",
+    "development": "Development",
+    "product": "Product"
+  },
+  "article": {
+    "blog": "Blog",
+    "button": "Back"
+  }
+}

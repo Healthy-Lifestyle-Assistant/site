@@ -1,11 +1,16 @@
-import { FC, useEffect } from 'react';
+import { FC, useEffect, useMemo } from 'react';
 import './ArticlePage.scss';
 import { useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Container } from '@components/Container';
 import { LinkLine } from '@components/LinkLine';
 import { BackToButton } from '@components/BackToButton';
 import { ArticleList } from '@components/ArticleList';
-import { articles } from '@/constants/articles';
+import { articles as articleEn } from '@/data/articles-en';
+import { articles as articleRu } from '@/data/articles-ru';
+import { articles as articleUk } from '@/data/articles-uk';
+import { Languages } from '@/types/Languages';
+import { Article } from '@/types/Article';
 import timeIcon from '@assets/icons/time.svg';
 import scheduleIcon from '@assets/icons/schedule.png';
 import notFoundBackground from '@assets/images/not-found-bg.png';
@@ -13,10 +18,23 @@ import notFoundBackground from '@assets/images/not-found-bg.png';
 
 export const ArticlePage: FC = () => {
   const { articleId } = useParams();
-  const article = articles.find(((item) => item.id === articleId));
+  const { t, i18n: { language } } = useTranslation('blog');
+  const articlesLanguage = useMemo(() => {
+    switch (language) {
+      case Languages.EN:
+        return articleEn;
+      case Languages.RU:
+        return articleRu;
+      case Languages.UK:
+        return articleUk;
+      default:
+        return articleEn;
+    }
+  }, [language]);
+  const article = articlesLanguage.find(((item: Article) => item.id === articleId));
 
   const links = [
-    { title: 'Blog', to: '/blog' },
+    { title: t('article.blog'), to: '/blog' },
     { title: article?.title || 'Not Found', to: `/blog/${article?.id || ''}` }
   ];
 
