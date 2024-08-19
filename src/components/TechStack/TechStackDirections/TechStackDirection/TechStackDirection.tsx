@@ -2,7 +2,6 @@ import { FC } from 'react';
 import './TechStackDirection.scss';
 import { motion } from 'framer-motion';
 import { DefaultButton } from '@components/DefaultButton';
-import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 interface Technologies {
@@ -19,8 +18,6 @@ interface TechStackDirectionProps {
 
 export const TechStackDirection: FC<TechStackDirectionProps> = ({ title, description, btnText, technologies }) => {
   const { t } = useTranslation('home');
-  const navigate = useNavigate();
-  const handleNavigate = () => navigate('/blog');
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -32,10 +29,7 @@ export const TechStackDirection: FC<TechStackDirectionProps> = ({ title, descrip
       <div className="TechStackDirection__info">
         <h3 className="TechStackDirection__title">{title}</h3>
         <p className="TechStackDirection__description">{description}</p>
-        <DefaultButton
-          title={btnText}
-          onClick={handleNavigate}
-        />
+        <DefaultButton title={btnText} />
       </div>
       <div className="TechStackDirection__technologies">
         <p className="TechStackDirection__frame">{t('stack.tech')}</p>
