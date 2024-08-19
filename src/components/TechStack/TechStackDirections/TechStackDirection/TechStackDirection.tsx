@@ -14,9 +14,10 @@ interface TechStackDirectionProps {
   description: string;
   btnText: string;
   technologies: Technologies[];
+  onClick: () => void;
 }
 
-export const TechStackDirection: FC<TechStackDirectionProps> = ({ title, description, btnText, technologies }) => {
+export const TechStackDirection: FC<TechStackDirectionProps> = ({ title, description, btnText, technologies, onClick }) => {
   const { t } = useTranslation('home');
   return (
     <motion.div
@@ -29,7 +30,7 @@ export const TechStackDirection: FC<TechStackDirectionProps> = ({ title, descrip
       <div className="TechStackDirection__info">
         <h3 className="TechStackDirection__title">{title}</h3>
         <p className="TechStackDirection__description">{description}</p>
-        <DefaultButton title={btnText} />
+        <DefaultButton title={btnText} onClick={onClick} />
       </div>
       <div className="TechStackDirection__technologies">
         <p className="TechStackDirection__frame">{t('stack.tech')}</p>
