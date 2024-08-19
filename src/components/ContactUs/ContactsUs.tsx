@@ -2,13 +2,14 @@ import { FC, useEffect, useRef, useState } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import './ContactUs.scss';
 import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { toast, ToastContainer } from 'react-toastify';
 import { sendFormData } from '@api/requests';
 import { DefaultButton } from '@components/DefaultButton';
 import { InputField } from '@components/ContactUs/InputField';
 import { TextareaField } from '@components/ContactUs/TextareaField';
-import { emailValidation, firstNameValidation, lastNameValidation, messageValidation } from '@utils/validation';
+import { createValidationRules, validateEmail } from '@utils/validation';
 
 interface IFormData {
   firstName: string;
@@ -18,20 +19,21 @@ interface IFormData {
 }
 
 export const ContactUs: FC = () => {
+  const { t } = useTranslation('home');
   const { pathname } = useLocation();
   const contactsRef = useRef<HTMLElement | null>(null);
   const [isLoading, setLoading] = useState<boolean>(false);
   const { register, handleSubmit, formState: { errors }, reset } = useForm<IFormData>();
 
   const onSubmit: SubmitHandler<IFormData> = async (data) => {
-    const toastId = toast.loading('Sending your message...');
+    const toastId = toast.loading(t('contact.request.loading'));
     setLoading(true);
     try {
       const { status, statusText } = await sendFormData(data);
 
       if (status === 200) {
         toast.update(toastId, {
-          render: 'Your message has been sent successfully!',
+          render: t('contact.request.success'),
           type: 'success',
           isLoading: false,
           autoClose: 3000,
@@ -39,7 +41,7 @@ export const ContactUs: FC = () => {
         reset();
       } else {
         toast.update(toastId, {
-          render: `Something went wrong: ${statusText}`,
+          render: `${t('contact.request.failed')}: ${statusText}`,
           type: 'error',
           isLoading: false,
           autoClose: 3000,
@@ -47,7 +49,7 @@ export const ContactUs: FC = () => {
       }
     } catch (error) {
       toast.update(toastId, {
-        render: `Something went wrong. Try again.`,
+        render: t('contact.request.error'),
         type: 'error',
         isLoading: false,
         autoClose: 3000,
@@ -63,6 +65,39 @@ export const ContactUs: FC = () => {
     }
   }, [pathname]);
 
+  const firstNameValidation = createValidationRules(
+    2,
+    30,
+    t('contact.validation.firstname.required'),
+    t('contact.validation.firstname.minLength', { count: 2 }),
+    t('contact.validation.firstname.maxLength', { count: 30 }),
+  );
+
+  const lastNameValidation = createValidationRules(
+    2,
+    30,
+    t('contact.validation.lastname.required'),
+    t('contact.validation.lastname.minLength', { count: 2 }),
+    t('contact.validation.lastname.maxLength', { count: 30 }),
+  );
+
+  const messageValidation = createValidationRules(
+    10,
+    1000,
+    t('contact.validation.message.required'),
+    t('contact.validation.message.minLength', { count: 10 }),
+    t('contact.validation.message.maxLength', { count: 1000 }),
+  );
+
+  const emailValidation = {
+    required: t('contact.validation.email.required'),
+    maxLength: {
+      value: 50,
+      message: t('contact.validation.email.maxLength', { count: 50 }),
+    },
+    validate: (email: string) => validateEmail(email, t),
+  };
+
   return (
     <section className="ContactUs" ref={contactsRef}>
       <ToastContainer
@@ -74,30 +109,30 @@ export const ContactUs: FC = () => {
         pauseOnHover={false}
       />
       <div className="ContactUs__container">
-        <h2 className="ContactUs__title">Contact Us</h2>
+        <h2 className="ContactUs__title">{t('contact.title')}</h2>
         <form onSubmit={handleSubmit(onSubmit)} className="ContactUs__form">
           <div className="ContactUs__inputs">
             <InputField
               {...register('firstName', firstNameValidation)}
-              placeholder="First Name"
+              placeholder={t('contact.firstname')}
               isNotValid={Boolean(errors.firstName)}
               validationMessage={errors.firstName?.message || ''}
             />
             <InputField
               {...register('lastName', lastNameValidation)}
-              placeholder="Last Name"
+              placeholder={t('contact.lastname')}
               isNotValid={Boolean(errors.lastName)}
               validationMessage={errors.lastName?.message || ''}
             />
             <InputField
               {...register('email', emailValidation)}
-              placeholder="Email"
+              placeholder={t('contact.email')}
               isNotValid={Boolean(errors.email)}
               validationMessage={errors.email?.message || ''}
             />
             <TextareaField
               {...register('message', messageValidation)}
-              placeholder="Message"
+              placeholder={t('contact.message')}
               isNotValid={Boolean(errors.message)}
               validationMessage={errors.message?.message || ''}
             />
@@ -105,7 +140,7 @@ export const ContactUs: FC = () => {
           <DefaultButton
             style={{ width: '100%', maxWidth: 300 }}
             disabled={isLoading}
-            title="Send"
+            title={t('contact.button')}
           />
         </form>
       </div>

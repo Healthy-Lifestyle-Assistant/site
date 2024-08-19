@@ -7,7 +7,6 @@ import { BurgerMenuModal } from '@components/BurgerMenuModal';
 import { BurgerMenuItem } from '@components/BurgerMenu/BurgerMenuItem';
 import { BurgerMenuOption } from '@components/BurgerMenu/BurgerMenuOption';
 import { Languages } from '@/types/Languages';
-import { navigation } from '@/constants/navigation';
 
 interface BurgerMenuProps {
   onClick: () => void;
@@ -15,8 +14,16 @@ interface BurgerMenuProps {
 
 export const BurgerMenu: FC<BurgerMenuProps> = ({ onClick }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation('home');
   const { pathname } = useLocation();
+
+  const navigation = [
+    { title: t('header.navigation.home'), to: '/' },
+    { title: t('header.navigation.about'), to: '/about' },
+    { title: t('header.navigation.services'), to: '/services' },
+    { title: t('header.navigation.team'), to: '/team' },
+    { title: t('header.navigation.contact'), to: '/contact-us' }
+  ];
 
   const handleToggleModal = () => setIsOpen(!isOpen);
   const handleSelectLanguage = (value: string) => i18n.changeLanguage(value as Languages);
@@ -41,7 +48,7 @@ export const BurgerMenu: FC<BurgerMenuProps> = ({ onClick }) => {
           />
         ))}
         <BurgerMenuOption
-          title="Languages"
+          title={t('header.navigation.languages')}
           isOpen={isOpen}
           onClick={handleToggleModal}
         />
@@ -49,7 +56,7 @@ export const BurgerMenu: FC<BurgerMenuProps> = ({ onClick }) => {
       <AnimatePresence>
         {isOpen && (
           <BurgerMenuModal
-            title="Choose a website language"
+            title={t('header.langs.names.frame')}
             currentValue={i18n.language}
             variables={languagesItems}
             onClose={handleToggleModal}
