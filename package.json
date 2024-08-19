@@ -1,5 +1,6 @@
 {
   "name": "novarserve-website",
+  "homepage": "https://www.novaserve-digital.com",
   "private": true,
   "version": "0.0.0",
   "type": "module",
