@@ -1,20 +1,22 @@
 import { FC, useEffect, useRef } from 'react';
 import './Services.scss';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { DefaultButton } from '@components/DefaultButton';
 import { ServicesList } from '@components/Services/ServicesList';
 
 export const Services: FC = () => {
   const { t } = useTranslation('home');
-  const { pathname } = useLocation();
+  const location = useLocation();
   const servicesRef = useRef<HTMLElement | null>(null);
+  const navigate = useNavigate();
+  const handleNavigate = () => navigate('/contact-us');
 
   useEffect(() => {
-    if (pathname === '/services') {
+    if (location.pathname === '/services') {
       servicesRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [pathname]);
+  }, [location]);
 
   return (
     <section className="Services" ref={servicesRef}>
@@ -28,7 +30,7 @@ export const Services: FC = () => {
             {t('services.description')}
           </p>
         </div>
-        <DefaultButton title={t('services.button')} />
+        <DefaultButton title={t('services.button')} onClick={handleNavigate} />
       </div>
       <ServicesList />
     </section>

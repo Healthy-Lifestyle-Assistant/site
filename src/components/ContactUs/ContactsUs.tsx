@@ -20,7 +20,7 @@ interface IFormData {
 
 export const ContactUs: FC = () => {
   const { t } = useTranslation('home');
-  const { pathname } = useLocation();
+  const location = useLocation();
   const contactsRef = useRef<HTMLElement | null>(null);
   const [isLoading, setLoading] = useState<boolean>(false);
   const { register, handleSubmit, formState: { errors }, reset } = useForm<IFormData>();
@@ -60,10 +60,10 @@ export const ContactUs: FC = () => {
   };
 
   useEffect(() => {
-    if (pathname === '/contact-us') {
+    if (location.pathname === '/contact-us') {
       contactsRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [pathname]);
+  }, [location]);
 
   const firstNameValidation = createValidationRules(
     2,

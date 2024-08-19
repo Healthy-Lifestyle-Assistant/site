@@ -1,5 +1,6 @@
 import { FC, useMemo } from 'react';
 import './TechStackDirections.scss';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { AnimatePresence } from 'framer-motion';
 import { TechStackDirection } from './TechStackDirection/TechStackDirection';
@@ -33,6 +34,8 @@ interface TechStackDirectionProps {
 
 export const TechStackDirections: FC<TechStackDirectionProps> = ({ selectedCategory }) => {
   const { t } = useTranslation('home');
+  const navigate = useNavigate();
+  const handleNavigate = () => navigate('/contact-us');
 
   const techDirections = [
     {
@@ -41,6 +44,7 @@ export const TechStackDirections: FC<TechStackDirectionProps> = ({ selectedCateg
       btnText: t('stack.cards.frontend.button'),
       technologies: technologiesFrontend,
       category: TechStackCategories.FRONTEND,
+      onClick: handleNavigate,
     },
     {
       title: t('stack.cards.backend.title'),
@@ -48,6 +52,7 @@ export const TechStackDirections: FC<TechStackDirectionProps> = ({ selectedCateg
       btnText: t('stack.cards.backend.button'),
       technologies: technologiesBackend,
       category: TechStackCategories.BACKEND,
+      onClick: handleNavigate,
     }
   ];
 
@@ -62,13 +67,14 @@ export const TechStackDirections: FC<TechStackDirectionProps> = ({ selectedCateg
   return (
     <div className="TechStackDirections">
       <AnimatePresence>
-        {visibleTechDirections.map(({ title, description, btnText, technologies }) => (
+        {visibleTechDirections.map(({ title, description, btnText, technologies, onClick }) => (
           <TechStackDirection
             key={title}
             title={title}
             description={description}
             btnText={btnText}
             technologies={technologies}
+            onClick={onClick}
           />
         ))}
       </AnimatePresence>
