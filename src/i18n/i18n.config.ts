@@ -8,6 +8,7 @@ import homeRu from './locales/ru/home.json';
 import blogRu from './locales/ru/blog.json';
 import homeUk from './locales/uk/home.json';
 import blogUk from './locales/uk/blog.json';
+import { Languages } from '@/types/Languages';
 
 const resources = {
   en: {
@@ -29,7 +30,7 @@ i18next
   .use(LanguageDetector)
   .init({
     debug: true,
-    fallbackLng: 'en',
+    fallbackLng: Languages.EN,
     interpolation: {
       escapeValue: false,
     },
