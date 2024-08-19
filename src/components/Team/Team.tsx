@@ -7,13 +7,13 @@ import { useTranslation } from 'react-i18next';
 
 export const Team: FC = () => {
   const { t } = useTranslation('home');
-  const { pathname } = useLocation();
+  const location = useLocation();
   const teamRef = useRef<HTMLElement | null>(null);
   useEffect(() => {
-    if (pathname === '/team') {
+    if (location.pathname === '/team') {
       teamRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [pathname]);
+  }, [location]);
 
   const teamMembers = [
     {

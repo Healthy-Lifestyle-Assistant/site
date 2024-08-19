@@ -7,15 +7,15 @@ import { useTranslation } from 'react-i18next';
 
 export const About: FC = () => {
   const { t } = useTranslation('home')
-  const { pathname } = useLocation();
+  const location = useLocation();
   const aboutRef = useRef<HTMLElement | null>(null);
   const navigate = useNavigate();
   const handleNavigate = () => navigate('/contact-us');
   useEffect(() => {
-    if (pathname === '/about') {
+    if (location.pathname === '/about') {
       aboutRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [pathname]);
+  }, [location]);
 
   return (
     <section className="About" ref={aboutRef}>

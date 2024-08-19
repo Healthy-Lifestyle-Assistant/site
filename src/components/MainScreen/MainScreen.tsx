@@ -6,15 +6,15 @@ import backgroundImage from '@assets/images/earth-grid.png';
 
 export const MainScreen: FC = () => {
   const { t } = useTranslation('home');
-  const { pathname } = useLocation();
+  const location = useLocation();
   const mainRef = useRef<HTMLElement | null>(null);
   const navigate = useNavigate();
   const handleNavigate = () => navigate('/about');
   useEffect(() => {
-    if (pathname === '/') {
+    if (location.pathname === '/') {
       mainRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [pathname]);
+  }, [location]);
 
   return (
     <section className="MainScreen" ref={mainRef}>
