@@ -19,6 +19,7 @@ export default defineConfig({
     },
   },
   plugins: [react()],
+  base: "/novarserve-website/",
   build: {
     rollupOptions: {
       external: ['intl-pluralrules']
