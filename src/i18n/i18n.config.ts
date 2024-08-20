@@ -1,5 +1,4 @@
 import i18next from 'i18next';
-import 'intl-pluralrules';
 import { initReactI18next } from 'react-i18next';
 import homeEn from './locales/en/home.json';
 import blogEn from './locales/en/blog.json';
