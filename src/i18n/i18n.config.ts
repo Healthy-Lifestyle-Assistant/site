@@ -50,7 +50,5 @@ i18next
       localStorage.setItem('i18nextLng', lng);
     }
   });
-  
-
 
 export default i18next;
