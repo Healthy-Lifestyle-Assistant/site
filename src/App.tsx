@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import './App.scss';
 import './i18n/i18n.config';
+import 'intl-pluralrules';
 import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
 import { HomePage } from '@pages/HomePage';
 // import { BlogPage } from '@pages/BlogPage';
